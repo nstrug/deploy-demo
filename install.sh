@@ -1,4 +1,12 @@
-git clone https://github.com/rhoai-mlops/deploy-lab.git
+git clone https://github.com/nstrug/deploy-demo.git
+cd deploy-demo/operators
+
+## Build dependencies
+helm dependency Build
+
+## Install required operators
+helm upgrade --install build-summary-operators . --namespace build-summary --create-namespace 
+
 
 ## Install GitOps Operator and Instance
 helm upgrade --install ml500-gitops gitops --namespace ml500 --create-namespace
